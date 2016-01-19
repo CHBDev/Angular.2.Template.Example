@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": true,
+    "javascript.suggest.useCodeSnippetsOnMethodSuggest": false,
+    "typescript.useCodeSnippetsOnMethodSuggest": false,
+    "files.exclude": {
+		  "**/.git": true,
+		  "**/.DS_Store": true,
+      "**/*.js": { "when": "$(basename).ts"},
+      "**/*.map": true,
+      "**/node_modules/": true
+	   }
+}
