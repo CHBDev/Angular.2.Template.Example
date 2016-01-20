@@ -1,0 +1,1 @@
+declaring properties as input properties

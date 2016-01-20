@@ -1,6 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {Thing} from './thing';
 import {ThingDetailComponent} from './thing-detail.component';
+import {ThingService} from './thing.service';
+
+
 
 @Component({
   directives: [ThingDetailComponent],
@@ -9,6 +12,7 @@ import {ThingDetailComponent} from './thing-detail.component';
     <h1>{{title}}</h1>
     <my-thing-detail [thing]="selectedThing"></my-thing-detail>
     <h2>My Things</h2>
+    <div *ngIf="!things">...Loading Things...</div>
     <ul class="things">
       <li *ngFor="#thing of things" [class.selected]="thing === selectedThing" (click)="onSelect(thing)">
         <span class="badge">{{thing.id}}</span> {{thing.name}}
@@ -62,31 +66,32 @@ import {ThingDetailComponent} from './thing-detail.component';
     margin-right: .8em;
     border-radius: 4px 0px 0px 4px;
   }
-`]
+`],
+  providers: [ThingService]
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit{
+  
+  ngOnInit(){
+    this.getThings();
+  }
   public title = 'GW APP';
   public selectedThing: Thing;
-  public things = THINGS; //this infers its type from the strongly typed array
+  public things: Thing[]; //this infers its type from the strongly typed array
+  
+  constructor(private _thingService: ThingService){};
   
   onSelect(thing: Thing){ this.selectedThing = thing;};
+  
+  getThings(){
+    this._thingService.getThingsDelayed().then(things => this.things = things);
+  }
+  
   
 }
 
 
-var THINGS: Thing[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
-];
+
 
 
 
