@@ -13,6 +13,7 @@ System.register(['angular2/platform/browser', './app.component'], function(expor
         }
     }
 });
+//bootstrap(TestComponent)
 // (function(app) {
 //   document.addEventListener('DOMContentLoaded', function() {
 //     ng.platform.browser.bootstrap(app.AppComponent);

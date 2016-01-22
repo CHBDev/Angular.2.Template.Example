@@ -38,4 +38,23 @@ System.register(['./mock-things', 'angular2/core'], function(exports_1) {
         }
     }
 });
+//thing.service.ts
+// @Injectable()
+// export class ThingService {
+//   public myString: string = "base";
+//   constructor(str: string) {
+//     this.myString = str;
+//   }
+// }
+// @Injectable()
+// export class Thing2Service extends ThingService {
+//   constructor(){
+//     super('I AM CHILD');
+//   }
+// }
+// //app.component.ts
+// public thingService: ThingService = new ThingService("I AM PARENT");
+// public thing2Service: Thing2Service = new Thing2Service();
+// ThingService.myString === "I AM PARENT"; //true
+// Thing2Service.myString === "I AM CHILD"; //true
 //# sourceMappingURL=thing.service.js.map

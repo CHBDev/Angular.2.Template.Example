@@ -2,14 +2,12 @@ import {Thing} from './thing';
 
 
 export var THINGS: Thing[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
+  new Thing(11, "someone", "yellow", "San Francisco"),
+  new Thing(12, "sometwo", "yellow", "San Francisco"),
+  new Thing(13, "somethree", "yellow", "San Francisco"),
+  new Thing(14, "somefour", "yellow", "San Francisco"),
+  new Thing(15, "somefive", "yellow", "San Francisco"),
+  new Thing(16, "somesix", "yellow", "San Francisco"),
+  new Thing(17, "someseven", "yellow", "San Francisco"),
+  new Thing(18, "someeight", "yellow", "San Francisco")
 ];

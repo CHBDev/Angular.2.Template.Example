@@ -1,1 +1,1 @@
-{"version":3,"file":"thing.js","sourceRoot":"","sources":["thing.ts"],"names":[],"mappings":""}
+{"version":3,"file":"thing.js","sourceRoot":"","sources":["thing.ts"],"names":["Thing","Thing.constructor"],"mappings":"AAAA,2BAA2B;AAC3B,gBAAgB;AAChB,kBAAkB;AAClB,IAAI;;;;;;YAEJ;gBACEA,eACSA,EAAUA,EACVA,IAAYA,EACZA,KAAaA,EACbA,QAAiBA;oBAHjBC,OAAEA,GAAFA,EAAEA,CAAQA;oBACVA,SAAIA,GAAJA,IAAIA,CAAQA;oBACZA,UAAKA,GAALA,KAAKA,CAAQA;oBACbA,aAAQA,GAARA,QAAQA,CAASA;gBACxBA,CAACA,CAACD,0GAA0GA;gBAChHA,YAACA;YAADA,CAACA,AAPD,IAOC;YAPD,yBAOC,CAAA"}
