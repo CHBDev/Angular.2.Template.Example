@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['../mocks/address.data', 'angular2/core', '../mocks/data.service'], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         function __() { this.constructor = d; }
@@ -13,39 +13,34 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var ParentService, ChildService;
+    var address_data_1, core_1, data_service_1;
+    var AddressService;
     return {
         setters:[
+            function (address_data_1_1) {
+                address_data_1 = address_data_1_1;
+            },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (data_service_1_1) {
+                data_service_1 = data_service_1_1;
             }],
         execute: function() {
-            ParentService = (function () {
-                function ParentService(str) {
-                    this.myString = "base";
-                    this.myString = str;
+            AddressService = (function (_super) {
+                __extends(AddressService, _super);
+                function AddressService() {
+                    _super.call(this);
+                    this._data = address_data_1.ADDRESSES;
                 }
-                ParentService = __decorate([
-                    core_1.Injectable(), 
-                    __metadata('design:paramtypes', [Object])
-                ], ParentService);
-                return ParentService;
-            })();
-            exports_1("ParentService", ParentService);
-            ChildService = (function (_super) {
-                __extends(ChildService, _super);
-                function ChildService() {
-                    _super.call(this, "I AM CHILD");
-                }
-                ChildService = __decorate([
+                AddressService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], ChildService);
-                return ChildService;
-            })(ParentService);
-            exports_1("ChildService", ChildService);
+                ], AddressService);
+                return AddressService;
+            })(data_service_1.DataService);
+            exports_1("AddressService", AddressService);
         }
     }
 });
-//# sourceMappingURL=test.service.js.map
+//# sourceMappingURL=addresses.service.js.map

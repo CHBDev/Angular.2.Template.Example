@@ -1,7 +1,71 @@
-.ng-valid[required] {
-  border-left: 5px solid #42A948; /* green */
+
+body {
+  font-size: 15px;
+  line-height: 1.2em;
+  background-color: #0D71FF;
+  font-family: "courier", courier;
+  font-weight: normal;
+  color: white;
+  box-sizing: border-box;
 }
 
-.ng-invalid {
-  border-left: 5px solid #a94442; /* red */
+.main{
+  display: inline-block;
+  border: 1px dashed white;
+}
+
+.holder{
+  border: 1px dotted white;
+}
+
+.gw-listview{
+  margin: 1rem;
+}
+
+.car-img{
+  float: left;
+  margin-right: 1rem;
+  border: 4px double white;
+}
+
+table {
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+.sorted-by{
+  border: 1px dashed white;
+}
+
+tr {
+  text-align: center;
+}
+
+td, th {
+  text-align: left;
+  padding: .4rem;
+}
+
+tr:nth-child(4n+1){
+  background-color: #0D71DD;
+}
+
+tr:nth-child(4n+2){
+  background-color: #0D71DD;
+}
+
+.selected-row {
+  padding-top: 1rem;
+  border-top: 1px dashed white;
+}
+
+.extra-row{
+  border-bottom: 1px dashed white;
+}
+
+.expanded-content{
+  display: block;
+  text-align: center;
+  height: auto;
+  min-height: 6rem;
 }

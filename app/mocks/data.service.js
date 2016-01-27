@@ -9,31 +9,28 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ClickMeComponent;
+    var DataService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            ClickMeComponent = (function () {
-                function ClickMeComponent() {
-                    this.clickMessage = '';
+            DataService = (function () {
+                function DataService() {
                 }
-                ClickMeComponent.prototype.onClickMe = function () {
-                    this.clickMessage = 'This thing was clicked';
+                DataService.prototype.getData = function () {
+                    var _this = this;
+                    return new Promise(function (res) { return setTimeout(function () { return res(_this._data); }, 330); });
                 };
-                ClickMeComponent = __decorate([
-                    core_1.Component({
-                        selector: 'click-me',
-                        template: "\n    <button (click)=\"onClickMe()\">Click me!</button>\n    {{clickMessage}}"
-                    }), 
+                DataService = __decorate([
+                    core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], ClickMeComponent);
-                return ClickMeComponent;
+                ], DataService);
+                return DataService;
             })();
-            exports_1("ClickMeComponent", ClickMeComponent);
+            exports_1("DataService", DataService);
         }
     }
 });
-//# sourceMappingURL=click-me.component.js.map
+//# sourceMappingURL=data.service.js.map

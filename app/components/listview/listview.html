@@ -1,0 +1,23 @@
+
+  
+  <table class="gw-listview">
+    <span *ngIf="title">{{title}}</span>
+    <thead>
+      <th *ngFor="#header of headers" (click)="sortRowsBy(header)" [class.sorted-by]="sortedBy===header">{{header}}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="#row of sortedRows; #i = index" (click)="setExpanded(row)" [class.main-row]="!row.extraRow" [class.extra-row]="row.extraRow" [class.selected-row]="row.isExpanded">
+        <td *ngIf="!row.extraRow" *ngFor="#header of headers">{{row[header]}}</td>
+        <!--TODO: need colspan to get dynamic value from headers.length, but can't figure it out-->
+        <td colspan="4" *ngIf="row.extraRow" [hidden]="!sortedRows[i-1].isExpanded">
+          <div>
+            <!--TODO: this needs to all be pulled from a template file located on the sub classes of the data services-->
+            <img class="car-img" src="http://lorempixel.com/64/64/transport">
+            <div>EXPANDED CONTENT: {{sortedRows[i-1][headers[0]]}}</div>
+            <div>EXPANDED CONTENT: {{sortedRows[i-1][headers[1]]}}</div>
+          </div>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
