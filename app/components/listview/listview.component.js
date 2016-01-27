@@ -9,7 +9,7 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, data_service_1;
-    var CLOSEOTHERS, ListView;
+    var CLOSEOTHERS, TEMPLATEURL, ListView;
     return {
         setters:[
             function (core_1_1) {
@@ -20,6 +20,7 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
             }],
         execute: function() {
             CLOSEOTHERS = true;
+            TEMPLATEURL = './app/components/' + 'listview/listview.html';
             ListView = (function () {
                 function ListView(ds) {
                     this.sortedBy = "none";
@@ -100,10 +101,11 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                     }
                     this._sortedRows = doubleRows;
                 };
+                ListView.templateUrl = TEMPLATEURL; //so children can make use of it directly
                 ListView = __decorate([
                     core_1.Component({
-                        // selector: 'gw-listview',
-                        templateUrl: './app/components/' + 'listview/listview.html',
+                        selector: 'gw-listview',
+                        templateUrl: TEMPLATEURL,
                         directives: [],
                         //styles: [require('./listview.css')],
                         inputs: [],

@@ -4,7 +4,7 @@ import {AddressService} from '../../mocks/addresses.service';
 
 @Component({
   selector: 'gw-address-listview',
-  templateUrl: './app/components/' + 'listview/listview.html',
+  templateUrl: ListView.templateUrl,
   directives: [],
   styles: [],
   inputs: [],

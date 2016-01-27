@@ -4,7 +4,7 @@ import {VehiclesService} from '../../mocks/vehicles.service';
 
 @Component({
   selector: 'gw-vehicle-listview',
-  templateUrl: './app/components/' + 'listview/listview.html',
+  templateUrl: ListView.templateUrl,
   directives: [],
   styles: [],
   inputs: [],

@@ -1,12 +1,12 @@
 const CLOSEOTHERS = true;
-
+const TEMPLATEURL = './app/components/' + 'listview/listview.html';
 
 import {Component, OnInit} from 'angular2/core';
 import {DataService} from '../../mocks/data.service';
 
 @Component({
-  // selector: 'gw-listview',
-  templateUrl: './app/components/' + 'listview/listview.html',
+  selector: 'gw-listview',
+  templateUrl: TEMPLATEURL,
   directives: [],
   //styles: [require('./listview.css')],
   inputs: [],
@@ -14,6 +14,7 @@ import {DataService} from '../../mocks/data.service';
 })
 
 export class ListView implements OnInit {
+  static templateUrl: string = TEMPLATEURL; //so children can make use of it directly
   private _searchCriteria:Object;
   private _rows:Array<Object>;
   private _sortedRows:Array<Object>;
@@ -31,7 +32,6 @@ export class ListView implements OnInit {
     }else{
       this._dataService = new DataService();
     }
-    
   }
   
   setExpanded(tr:any){
@@ -94,7 +94,6 @@ export class ListView implements OnInit {
       doubleRows.push(d[i]);
       doubleRows.push({extraRow:true});
     }
-    
     this._sortedRows = doubleRows;
   }
   

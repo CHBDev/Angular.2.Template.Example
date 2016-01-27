@@ -35,7 +35,7 @@ System.register(['angular2/core', '../listview/listview.component', '../../mocks
                 AddressListView = __decorate([
                     core_1.Component({
                         selector: 'gw-address-listview',
-                        templateUrl: './app/components/' + 'listview/listview.html',
+                        templateUrl: listview_component_1.ListView.templateUrl,
                         directives: [],
                         styles: [],
                         inputs: [],
