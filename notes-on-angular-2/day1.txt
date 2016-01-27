@@ -1,5 +1,0 @@
-declaring properties as input properties
-all components are directives...
-local template variables declared with #
-
-//you have to respecify everything, and things just silently fail much of the time
