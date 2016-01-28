@@ -34,6 +34,16 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                 ListView.prototype.ngOnInit = function () {
                     this.getData();
                 };
+                ListView.prototype.getCellContent = function (rowObj, header) {
+                    var data = rowObj[header];
+                    if (header === "icon") {
+                        return ""; //TODO: look more at options here
+                        return "<img src='" + data.src + "/>";
+                    }
+                    else {
+                        return data;
+                    }
+                };
                 ListView.prototype.setExpanded = function (tr) {
                     if (tr.isExpanded) {
                         tr.isExpanded = false;

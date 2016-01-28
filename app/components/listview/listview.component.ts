@@ -1,6 +1,8 @@
 const CLOSEOTHERS = true;
 const TEMPLATEURL = './app/components/' + 'listview/listview.html';
-
+//TODO: meta data that loads an icon
+//hover state for rows
+//whole row changes selected state
 import {Component, OnInit} from 'angular2/core';
 import {DataService} from '../../mocks/data.service';
 
@@ -31,6 +33,16 @@ export class ListView implements OnInit {
       this._dataService = ds
     }else{
       this._dataService = new DataService();
+    }
+  }
+  
+  getCellContent(rowObj: Object, header:string){
+    let data = rowObj[header];
+    if(header === "icon"){
+      return ""; //TODO: look more at options here
+      return "<img src='" + data.src + "/>"
+    }else{
+      return data;
     }
   }
   

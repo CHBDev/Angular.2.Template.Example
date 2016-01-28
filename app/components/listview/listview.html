@@ -7,7 +7,7 @@
     </thead>
     <tbody>
       <tr *ngFor="#row of sortedRows; #i = index" (click)="setExpanded(row)" [class.main-row]="!row.extraRow" [class.extra-row]="row.extraRow" [class.selected-row]="row.isExpanded">
-        <td *ngIf="!row.extraRow" *ngFor="#header of headers">{{row[header]}}</td>
+        <td *ngIf="!row.extraRow" *ngFor="#header of headers">{{getCellContent(row, header)}}<img class="icon" *ngIf="header==='icon'" attr.src="{{row[header].src}}"/></td>
         <!--TODO: need colspan to get dynamic value from headers.length, but can't figure it out-->
         <td attr.colspan="{{headers.length}}" *ngIf="row.extraRow" [hidden]="!sortedRows[i-1].isExpanded">
           <div>

@@ -54,13 +54,25 @@ tr:nth-child(4n+2){
   background-color: #0D71DD;
 }
 
-.selected-row {
-  padding-top: 1rem;
-  border-top: 1px dashed white;
+tr:hover{
+  background-color: deeppink;
 }
 
-.extra-row{
+tr.selected-row {
+  padding-top: 1rem;
+  border-top: 1px dashed white;
+  background-color: white;
+  color: #0D71FF
+}
+
+tr.extra-row{
   border-bottom: 1px dashed white;
+  background-color: white;
+  color: #0D71FF
+}
+
+.icon{
+  border-radius: 12px;
 }
 
 .expanded-content{
