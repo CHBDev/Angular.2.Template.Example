@@ -3,7 +3,7 @@
   <table class="gw-listview">
     <span *ngIf="title">{{title}}</span>
     <thead>
-      <th *ngFor="#header of headers" (click)="sortRowsBy(header)" [class.sorted-by]="sortedBy===header">{{header}}</th>
+      <th *ngFor="#header of headers" (click)="sortRowsBy(header)" [class.sorted-by]="sortedBy===header">{{getHeaderString(header)}}</th>
     </thead>
     <tbody>
       <tr *ngFor="#row of sortedRows; #i = index" (click)="setExpanded(row)" [class.main-row]="!row.extraRow" [class.extra-row]="row.extraRow" [class.selected-row]="row.isExpanded">

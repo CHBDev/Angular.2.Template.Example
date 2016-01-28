@@ -40,10 +40,16 @@ export class ListView implements OnInit {
     let data = rowObj[header];
     if(header === "icon"){
       return ""; //TODO: look more at options here
-      return "<img src='" + data.src + "/>"
-    }else{
-      return data;
+      //return "<img src='" + data.src + "/>"
     }
+    return data;
+  }
+  
+  getHeaderString(header:string){
+    if(header === "icon"){
+      return "";
+    }
+    return header;
   }
   
   setExpanded(tr:any){

@@ -38,11 +38,14 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                     var data = rowObj[header];
                     if (header === "icon") {
                         return ""; //TODO: look more at options here
-                        return "<img src='" + data.src + "/>";
                     }
-                    else {
-                        return data;
+                    return data;
+                };
+                ListView.prototype.getHeaderString = function (header) {
+                    if (header === "icon") {
+                        return "";
                     }
+                    return header;
                 };
                 ListView.prototype.setExpanded = function (tr) {
                     if (tr.isExpanded) {
