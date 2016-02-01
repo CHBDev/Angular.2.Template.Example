@@ -7,19 +7,25 @@ body {
   font-weight: normal;
   color: white;
   box-sizing: border-box;
+  width: 100%;
+  min-width: 400px;
 }
 
 .main{
   display: inline-block;
   border: 1px dashed white;
+  margin: .4rem;
 }
 
 .holder{
   border: 1px dotted white;
+  position: relative;
+  min-width: 100%;
 }
 
 .gw-listview{
   margin: 1rem;
+  position: relative;
 }
 
 .car-img{
@@ -30,7 +36,9 @@ body {
 
 table {
   border-collapse: collapse;
+  table-layout: fixed;
   box-sizing: border-box;
+  /*width: 100%;*/
 }
 
 .sorted-by{
@@ -62,13 +70,13 @@ tr.selected-row {
   padding-top: 1rem;
   border-top: 1px dashed white;
   background-color: white;
-  color: #0D71FF
+  color: #0D71FF;
 }
 
 tr.extra-row{
   border-bottom: 1px dashed white;
   background-color: white;
-  color: #0D71FF
+  color: #0D71FF;
 }
 
 .icon{
@@ -80,4 +88,22 @@ tr.extra-row{
   text-align: center;
   height: auto;
   min-height: 6rem;
+}
+
+.gw-listview-collapser{
+  position: absolute;
+  right: .4rem;
+  top: .4rem;
+}
+
+.visibility-hidden{
+  visibility: hidden;
+}
+
+.visibility-visible{
+  visibility: visible;
+}
+
+.visibility-collapse{
+  visibility: collapse;
 }

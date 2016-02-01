@@ -24,6 +24,7 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
             ListView = (function () {
                 function ListView(ds) {
                     this.sortedBy = "none";
+                    this.isCollapsed = true;
                     if (ds) {
                         this._dataService = ds;
                     }
@@ -31,6 +32,9 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                         this._dataService = new data_service_1.DataService();
                     }
                 }
+                ListView.prototype.collapserClicked = function () {
+                    this.isCollapsed = !this.isCollapsed;
+                };
                 ListView.prototype.ngOnInit = function () {
                     this.getData();
                 };
@@ -65,6 +69,8 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                     this.getData();
                 };
                 ListView.prototype.sortRowsBy = function (str) {
+                    if (str === "")
+                        return;
                     this.sortedBy = str;
                     var sortFunc = function (a, b) {
                         if (a[str] > b[str])

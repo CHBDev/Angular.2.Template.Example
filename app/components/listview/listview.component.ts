@@ -23,6 +23,12 @@ export class ListView implements OnInit {
   private _dataService: DataService;
   public headers: Array<string>;
   public sortedBy: string = "none";
+  public isCollapsed: boolean = true;
+  
+  
+  collapserClicked(){
+    this.isCollapsed = !this.isCollapsed;
+  }
   
   ngOnInit(){
     this.getData();
@@ -70,6 +76,7 @@ export class ListView implements OnInit {
   }
   
   sortRowsBy(str:string){
+    if(str === "") return;
     this.sortedBy = str;
     
     var sortFunc = function(a:Object, b:Object){
