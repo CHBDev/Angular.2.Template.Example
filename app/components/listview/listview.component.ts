@@ -1,5 +1,6 @@
 const CLOSEOTHERS = true;
 const TEMPLATEURL = './app/components/' + 'listview/listview.html';
+const CSSURL = './app/components/' + 'listview/listview.css';
 //TODO: meta data that loads an icon
 //hover state for rows
 //whole row changes selected state
@@ -10,13 +11,14 @@ import {DataService} from '../../mocks/data.service';
   selector: 'gw-listview',
   templateUrl: TEMPLATEURL,
   directives: [],
-  //styles: [require('./listview.css')],
+  styleUrls: [CSSURL],
   inputs: [],
   providers: [DataService]
 })
 
 export class ListView implements OnInit {
   static templateUrl: string = TEMPLATEURL; //so children can make use of it directly
+  static cssUrl: string = CSSURL;
   private _searchCriteria:Object;
   private _rows:Array<Object>;
   private _sortedRows:Array<Object>;
@@ -76,7 +78,7 @@ export class ListView implements OnInit {
   }
   
   sortRowsBy(str:string){
-    if(str === "") return;
+    if(str === "" || this.isCollapsed === true) return;
     this.sortedBy = str;
     
     var sortFunc = function(a:Object, b:Object){

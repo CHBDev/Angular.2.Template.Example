@@ -37,7 +37,7 @@ System.register(['angular2/core', '../listview/listview.component', '../../mocks
                         selector: 'gw-vehicle-listview',
                         templateUrl: listview_component_1.ListView.templateUrl,
                         directives: [],
-                        styles: [],
+                        styleUrls: [listview_component_1.ListView.cssUrl],
                         inputs: [],
                         providers: [vehicles_service_1.VehiclesService]
                     }), 

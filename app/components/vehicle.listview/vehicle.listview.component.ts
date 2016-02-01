@@ -6,7 +6,7 @@ import {VehiclesService} from '../../mocks/vehicles.service';
   selector: 'gw-vehicle-listview',
   templateUrl: ListView.templateUrl,
   directives: [],
-  styles: [],
+  styleUrls: [ListView.cssUrl],
   inputs: [],
   providers: [VehiclesService]
 })

@@ -9,7 +9,7 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, data_service_1;
-    var CLOSEOTHERS, TEMPLATEURL, ListView;
+    var CLOSEOTHERS, TEMPLATEURL, CSSURL, ListView;
     return {
         setters:[
             function (core_1_1) {
@@ -21,6 +21,7 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
         execute: function() {
             CLOSEOTHERS = true;
             TEMPLATEURL = './app/components/' + 'listview/listview.html';
+            CSSURL = './app/components/' + 'listview/listview.css';
             ListView = (function () {
                 function ListView(ds) {
                     this.sortedBy = "none";
@@ -69,7 +70,7 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                     this.getData();
                 };
                 ListView.prototype.sortRowsBy = function (str) {
-                    if (str === "")
+                    if (str === "" || this.isCollapsed === true)
                         return;
                     this.sortedBy = str;
                     var sortFunc = function (a, b) {
@@ -121,12 +122,13 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                     this._sortedRows = doubleRows;
                 };
                 ListView.templateUrl = TEMPLATEURL; //so children can make use of it directly
+                ListView.cssUrl = CSSURL;
                 ListView = __decorate([
                     core_1.Component({
                         selector: 'gw-listview',
                         templateUrl: TEMPLATEURL,
                         directives: [],
-                        //styles: [require('./listview.css')],
+                        styleUrls: [CSSURL],
                         inputs: [],
                         providers: [data_service_1.DataService]
                     }), 

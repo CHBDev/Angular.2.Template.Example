@@ -37,7 +37,7 @@ System.register(['angular2/core', '../listview/listview.component', '../../mocks
                         selector: 'gw-address-listview',
                         templateUrl: listview_component_1.ListView.templateUrl,
                         directives: [],
-                        styles: [],
+                        styleUrls: [listview_component_1.ListView.cssUrl],
                         inputs: [],
                         providers: [addresses_service_1.AddressService]
                     }), 

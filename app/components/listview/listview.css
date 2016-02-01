@@ -1,0 +1,90 @@
+.gw-listview{
+  font-size: 15px;
+  line-height: 1.2em;
+  background-color: #0D71FF;
+  font-family: "courier", courier;
+  font-weight: normal;
+  color: white;
+  box-sizing: border-box;
+  min-width: 400px;
+  position: relative;
+  margin: 1rem;
+}
+
+.car-img{
+  float: left;
+  margin-right: 1rem;
+  border: 4px double white;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.sorted-by{
+  border: 1px dashed white;
+}
+
+tr {
+  text-align: center;
+}
+
+td, th {
+  text-align: left;
+  padding: .4rem;
+}
+
+tr:nth-child(4n+1){
+  background-color: #0D71DD;
+}
+
+tr:nth-child(4n+2){
+  background-color: #0D71DD;
+}
+/*Note: this extra 'table' specificity is due to the fact that angular will increase specificity on the spuedo nth child element and break this cascade*/
+table tr:hover{
+  background-color: deeppink;
+}
+
+table tr.selected-row {
+  padding-top: 1rem;
+  border-top: 1px dashed white;
+  background-color: lightgray;
+  color: #0D71FF;
+}
+
+table tr.extra-row{
+  border-bottom: 1px dashed white;
+  background-color: lightgray;
+  color: #0D71FF;
+}
+
+.icon{
+  border-radius: 12px;
+}
+
+.expanded-content{
+  display: block;
+  text-align: center;
+  height: auto;
+  min-height: 6rem;
+}
+
+.gw-listview-collapser{
+  position: absolute;
+  right: .4rem;
+  top: .4rem;
+}
+
+.visibility-hidden{
+  visibility: hidden;
+}
+
+.visibility-visible{
+  visibility: visible;
+}
+
+.visibility-collapse{
+  visibility: collapse;
+}

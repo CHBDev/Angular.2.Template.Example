@@ -1,5 +1,7 @@
 
-body {
+/*Moved to encapsulated styles on the listview*/
+/*
+.gw-listview{
   font-size: 15px;
   line-height: 1.2em;
   background-color: #0D71FF;
@@ -7,23 +9,8 @@ body {
   font-weight: normal;
   color: white;
   box-sizing: border-box;
-  width: 100%;
   min-width: 400px;
-}
-
-.main{
-  display: inline-block;
-  border: 1px dashed white;
-  margin: .4rem;
-}
-
-.holder{
-  border: 1px dotted white;
   position: relative;
-  min-width: 100%;
-}
-
-.gw-listview{
   margin: 1rem;
   position: relative;
 }
@@ -37,8 +24,6 @@ body {
 table {
   border-collapse: collapse;
   table-layout: fixed;
-  box-sizing: border-box;
-  /*width: 100%;*/
 }
 
 .sorted-by{
@@ -106,4 +91,4 @@ tr.extra-row{
 
 .visibility-collapse{
   visibility: collapse;
-}
+}*/

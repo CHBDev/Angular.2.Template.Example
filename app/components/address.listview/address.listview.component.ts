@@ -6,7 +6,7 @@ import {AddressService} from '../../mocks/addresses.service';
   selector: 'gw-address-listview',
   templateUrl: ListView.templateUrl,
   directives: [],
-  styles: [],
+  styleUrls: [ListView.cssUrl],
   inputs: [],
   providers: [AddressService]
 })

@@ -1,6 +1,7 @@
 
-  <div class="gw-listview-collapser" (click)="collapserClicked()"><div *ngIf="isCollapsed">🔽</div><div *ngIf="!isCollapsed">🔼</div></div>
+  
   <table class="gw-listview">
+    <div class="gw-listview-collapser" (click)="collapserClicked()"><div *ngIf="isCollapsed">🔽</div><div *ngIf="!isCollapsed">🔼</div></div>
     <span *ngIf="title">{{title}}</span>
     <thead>
       <th *ngFor="#header of headers" (click)="sortRowsBy(header)" [class.sorted-by]="sortedBy===header">{{getHeaderString(header)}}</th>
