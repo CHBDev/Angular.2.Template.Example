@@ -1,4 +1,4 @@
-System.register(['../mocks/vehicles.data', 'angular2/core', '../mocks/data.service'], function(exports_1) {
+System.register(['angular2/core', '../mocks/data.service'], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         function __() { this.constructor = d; }
@@ -13,13 +13,10 @@ System.register(['../mocks/vehicles.data', 'angular2/core', '../mocks/data.servi
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var vehicles_data_1, core_1, data_service_1;
+    var core_1, data_service_1;
     var VehiclesService;
     return {
         setters:[
-            function (vehicles_data_1_1) {
-                vehicles_data_1 = vehicles_data_1_1;
-            },
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -31,8 +28,11 @@ System.register(['../mocks/vehicles.data', 'angular2/core', '../mocks/data.servi
                 __extends(VehiclesService, _super);
                 function VehiclesService() {
                     _super.call(this);
-                    this._data = vehicles_data_1.VEHICLES;
                 }
+                VehiclesService.prototype.getData = function () {
+                    return this._server.getVehicles();
+                    //return new Promise(res => setTimeout(() => res(this._data), 330));
+                };
                 VehiclesService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

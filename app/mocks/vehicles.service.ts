@@ -1,4 +1,4 @@
-import {VEHICLES} from '../mocks/vehicles.data';
+
 import {Injectable, Inject} from 'angular2/core';
 import {DataService} from '../mocks/data.service';
 
@@ -7,6 +7,10 @@ export class VehiclesService extends DataService {
   
   constructor() {
     super();
-    this._data = VEHICLES;
+  }
+  
+    getData():Promise<any> {
+    return this._server.getVehicles();
+    //return new Promise(res => setTimeout(() => res(this._data), 330));
   }
 }

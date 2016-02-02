@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {VehicleListView} from './components/vehicle.listview/vehicle.listview.component';
 import {AddressListView} from './components/address.listview/address.listview.component';
+import {Server} from '../server/';
 
 @Component({
   directives: [VehicleListView, AddressListView],
@@ -16,7 +17,7 @@ import {AddressListView} from './components/address.listview/address.listview.co
       </div>
     `,
   styles: [],
-  providers: []
+  providers: [Server]
 })
 
 export class AppComponent implements OnInit {

@@ -19,10 +19,10 @@ import {DataService} from '../../mocks/data.service';
 export class ListView implements OnInit {
   static templateUrl: string = TEMPLATEURL; //so children can make use of it directly
   static cssUrl: string = CSSURL;
-  private _searchCriteria:Object;
-  private _rows:Array<Object>;
-  private _sortedRows:Array<Object>;
-  private _dataService: DataService;
+  public _searchCriteria:Object;
+  public _rows:Array<Object>;
+  public _sortedRows:Array<Object>;
+  public _dataService: DataService;
   public headers: Array<string>;
   public sortedBy: string = "none";
   public isCollapsed: boolean = true;
