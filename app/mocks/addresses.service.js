@@ -31,8 +31,8 @@ System.register(['angular2/core', '../mocks/data.service'], function(exports_1) 
                     // this._data = ADDRESSES;
                 }
                 AddressService.prototype.getData = function () {
-                    return this._server.getAddresses();
-                    //return new Promise(res => setTimeout(() => res(this._data), 330));
+                    //return this._server.getAddresses();
+                    return Promise.resolve("yay");
                 };
                 AddressService = __decorate([
                     core_1.Injectable(), 

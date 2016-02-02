@@ -1,4 +1,4 @@
-System.register(['angular2/core', './components/vehicle.listview/vehicle.listview.component', './components/address.listview/address.listview.component', '../server/'], function(exports_1) {
+System.register(['angular2/core', './components/vehicle.listview/vehicle.listview.component', './components/address.listview/address.listview.component', '../server/wave1server.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', './components/vehicle.listview/vehicle.listvie
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, vehicle_listview_component_1, address_listview_component_1, _1;
+    var core_1, vehicle_listview_component_1, address_listview_component_1, wave1server_service_1;
     var AppComponent;
     return {
         setters:[
@@ -21,12 +21,12 @@ System.register(['angular2/core', './components/vehicle.listview/vehicle.listvie
             function (address_listview_component_1_1) {
                 address_listview_component_1 = address_listview_component_1_1;
             },
-            function (_1_1) {
-                _1 = _1_1;
+            function (wave1server_service_1_1) {
+                wave1server_service_1 = wave1server_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_server) {
                     this.title = 'GW APP';
                 }
                 AppComponent.prototype.ngOnInit = function () {
@@ -38,9 +38,9 @@ System.register(['angular2/core', './components/vehicle.listview/vehicle.listvie
                         selector: 'my-app',
                         template: "\n      <div class=\"main\">\n        <div class=\"holder\">\n          <gw-vehicle-listview></gw-vehicle-listview>\n        </div>\n        <div class=\"holder\">\n          <gw-address-listview></gw-address-listview>\n        </div>\n      </div>\n    ",
                         styles: [],
-                        providers: [_1.Server]
+                        providers: [wave1server_service_1.Server]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [wave1server_service_1.Server])
                 ], AppComponent);
                 return AppComponent;
             })();

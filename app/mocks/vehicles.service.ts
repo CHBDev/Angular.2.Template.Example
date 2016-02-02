@@ -10,7 +10,7 @@ export class VehiclesService extends DataService {
   }
   
     getData():Promise<any> {
-    return this._server.getVehicles();
-    //return new Promise(res => setTimeout(() => res(this._data), 330));
+    // return this._server.getVehicles();
+    return Promise.resolve("yay");
   }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {VehicleListView} from './components/vehicle.listview/vehicle.listview.component';
 import {AddressListView} from './components/address.listview/address.listview.component';
-import {Server} from '../server/';
+import {Server} from '../server/wave1server.service';
 
 @Component({
   directives: [VehicleListView, AddressListView],
@@ -16,6 +16,7 @@ import {Server} from '../server/';
         </div>
       </div>
     `,
+    
   styles: [],
   providers: [Server]
 })
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit {
   public title = 'GW APP';
   
   
-  constructor(){
+  constructor(_server: Server){
     
   };
 }
