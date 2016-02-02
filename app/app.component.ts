@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {VehicleListView} from './components/vehicle.listview/vehicle.listview.component';
 import {AddressListView} from './components/address.listview/address.listview.component';
-import {Server} from '../server/wave1server.service';
+import {Server} from './server/wave1server.service';
 
 @Component({
   directives: [VehicleListView, AddressListView],

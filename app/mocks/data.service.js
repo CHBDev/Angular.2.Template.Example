@@ -28,9 +28,10 @@ System.register(['angular2/core', '../../server/wave1server.service'], function(
                 };
                 DataService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [wave1server_service_1.Server])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof wave1server_service_1.Server !== 'undefined' && wave1server_service_1.Server) === 'function' && _a) || Object])
                 ], DataService);
                 return DataService;
+                var _a;
             })();
             exports_1("DataService", DataService);
         }
