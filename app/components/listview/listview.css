@@ -6,7 +6,7 @@
   font-weight: normal;
   color: white;
   box-sizing: border-box;
-  min-width: 400px;
+  min-width: 500px;
   position: relative;
   margin: 1rem;
 }
@@ -87,4 +87,12 @@ table tr.extra-row{
 
 .visibility-collapse{
   visibility: collapse;
+}
+
+.sorted-a-to-z{
+  background-color: green;
+}
+
+.sorted-z-to-a{
+  background-color: red;
 }

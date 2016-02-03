@@ -25,6 +25,7 @@ export class ListView implements OnInit {
   public _dataService: DataService;
   public headers: Array<string>;
   public sortedBy: string = "none";
+  public aToZSort: boolean = true;
   public isCollapsed: boolean = true;
   
   
@@ -77,15 +78,35 @@ export class ListView implements OnInit {
     this.getData();
   }
   
-  sortRowsBy(str:string){
-    if(str === "" || this.isCollapsed === true) return;
-    this.sortedBy = str;
-    
-    var sortFunc = function(a:Object, b:Object){
-      if(a[str] > b[str]) return 1;
-      if(a[str] < b[str]) return -1;
+  private _sortAToZ = function(boundIndex: string, a:Object, b:Object){
+      if(a[boundIndex] > b[boundIndex]) return 1;
+      if(a[boundIndex] < b[boundIndex]) return -1;
       return 0;
     };
+    
+   private _sortZToA = function(boundIndex: string, a:Object, b:Object){
+      if(a[boundIndex] < b[boundIndex]) return 1;
+      if(a[boundIndex] > b[boundIndex]) return -1;
+      return 0;
+    };
+  
+  sortRowsBy(str:string){
+    if(str === "" || this.isCollapsed === true) return;
+    if(this.sortedBy === str){
+      this.aToZSort = !this.aToZSort;
+    }else{
+      this.aToZSort = true;
+    }
+    this.sortedBy = str;
+    
+    var sortFunc: (a: Object, b:Object) => number;
+    
+    //this is really here to experiment with binding strongly typed functions as declarations
+    if(this.aToZSort === true){
+      sortFunc = this._sortAToZ.bind(null, str);
+    }else{
+      sortFunc = this._sortZToA.bind(null, str);
+    }
     //TODO: this is all bad, just creates new arrays and objects everytime
     //But I have been promised that this is throw away code...
     this._rows.sort(sortFunc);

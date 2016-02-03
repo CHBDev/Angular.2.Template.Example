@@ -10,8 +10,8 @@ export class AddressService extends DataService {
   }
   
   getData():Promise<any> {
-    //return this._server.getAddresses();
-    return Promise.resolve("yay");
+    return this._server.getAddresses();
+    //return Promise.resolve("addresses");
   }
   
 }

@@ -1,4 +1,4 @@
-System.register(['angular2/core', './components/vehicle.listview/vehicle.listview.component', './components/address.listview/address.listview.component', './server/wave1server.service'], function(exports_1) {
+System.register(['angular2/core', './components/vehicle.listview/vehicle.listview.component', './components/address.listview/address.listview.component', './mocks/wave1server.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -26,7 +26,7 @@ System.register(['angular2/core', './components/vehicle.listview/vehicle.listvie
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_server) {
+                function AppComponent() {
                     this.title = 'GW APP';
                 }
                 AppComponent.prototype.ngOnInit = function () {
@@ -40,7 +40,7 @@ System.register(['angular2/core', './components/vehicle.listview/vehicle.listvie
                         styles: [],
                         providers: [wave1server_service_1.Server]
                     }), 
-                    __metadata('design:paramtypes', [wave1server_service_1.Server])
+                    __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             })();

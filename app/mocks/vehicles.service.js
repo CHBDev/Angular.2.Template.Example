@@ -30,8 +30,8 @@ System.register(['angular2/core', '../mocks/data.service'], function(exports_1) 
                     _super.call(this);
                 }
                 VehiclesService.prototype.getData = function () {
-                    // return this._server.getVehicles();
-                    return Promise.resolve("yay");
+                    return this._server.getVehicles();
+                    //return Promise.resolve("vehicles");
                 };
                 VehiclesService = __decorate([
                     core_1.Injectable(), 

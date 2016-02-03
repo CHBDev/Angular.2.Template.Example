@@ -25,7 +25,22 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
             ListView = (function () {
                 function ListView(ds) {
                     this.sortedBy = "none";
+                    this.aToZSort = true;
                     this.isCollapsed = true;
+                    this._sortAToZ = function (boundIndex, a, b) {
+                        if (a[boundIndex] > b[boundIndex])
+                            return 1;
+                        if (a[boundIndex] < b[boundIndex])
+                            return -1;
+                        return 0;
+                    };
+                    this._sortZToA = function (boundIndex, a, b) {
+                        if (a[boundIndex] < b[boundIndex])
+                            return 1;
+                        if (a[boundIndex] > b[boundIndex])
+                            return -1;
+                        return 0;
+                    };
                     if (ds) {
                         this._dataService = ds;
                     }
@@ -72,14 +87,21 @@ System.register(['angular2/core', '../../mocks/data.service'], function(exports_
                 ListView.prototype.sortRowsBy = function (str) {
                     if (str === "" || this.isCollapsed === true)
                         return;
+                    if (this.sortedBy === str) {
+                        this.aToZSort = !this.aToZSort;
+                    }
+                    else {
+                        this.aToZSort = true;
+                    }
                     this.sortedBy = str;
-                    var sortFunc = function (a, b) {
-                        if (a[str] > b[str])
-                            return 1;
-                        if (a[str] < b[str])
-                            return -1;
-                        return 0;
-                    };
+                    var sortFunc;
+                    //this is really here to experiment with binding strongly typed functions as declarations
+                    if (this.aToZSort === true) {
+                        sortFunc = this._sortAToZ.bind(null, str);
+                    }
+                    else {
+                        sortFunc = this._sortZToA.bind(null, str);
+                    }
                     //TODO: this is all bad, just creates new arrays and objects everytime
                     //But I have been promised that this is throw away code...
                     this._rows.sort(sortFunc);

@@ -4,12 +4,11 @@
     <div class="gw-listview-collapser" (click)="collapserClicked()"><div *ngIf="isCollapsed">🔽</div><div *ngIf="!isCollapsed">🔼</div></div>
     <span *ngIf="title">{{title}}</span>
     <thead>
-      <th *ngFor="#header of headers" (click)="sortRowsBy(header)" [class.sorted-by]="sortedBy===header">{{getHeaderString(header)}}</th>
+      <th *ngFor="#header of headers" (click)="sortRowsBy(header)" [class.sorted-by]="sortedBy===header" [class.sorted-a-to-z]="aToZSort===true&&sortedBy===header" [class.sorted-z-to-a]="aToZSort===false&&sortedBy===header">{{getHeaderString(header)}}</th>
     </thead>
     <tbody [hidden]="isCollapsed">
       <tr *ngFor="#row of sortedRows; #i = index" (click)="setExpanded(row)" [class.main-row]="!row.extraRow" [class.extra-row]="row.extraRow" [class.selected-row]="row.isExpanded">
         <td *ngIf="!row.extraRow" *ngFor="#header of headers">{{getCellContent(row, header)}}<img class="icon" *ngIf="header==='icon'" attr.src="{{row[header].src}}"/></td>
-        <!--TODO: need colspan to get dynamic value from headers.length, but can't figure it out-->
         <td attr.colspan="{{headers.length}}" *ngIf="row.extraRow" [hidden]="!sortedRows[i-1].isExpanded">
           <div>
             <!--TODO: this needs to all be pulled from a template file located on the sub classes of the data services-->

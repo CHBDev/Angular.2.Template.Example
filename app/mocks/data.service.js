@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../../server/wave1server.service'], function(exports_1) {
+System.register(['angular2/core', './wave1server.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,7 +20,8 @@ System.register(['angular2/core', '../../server/wave1server.service'], function(
             }],
         execute: function() {
             DataService = (function () {
-                function DataService(server) {
+                function DataService() {
+                    this._server = new wave1server_service_1.Server();
                 }
                 DataService.prototype.getData = function () {
                     var _this = this;
@@ -28,10 +29,9 @@ System.register(['angular2/core', '../../server/wave1server.service'], function(
                 };
                 DataService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof wave1server_service_1.Server !== 'undefined' && wave1server_service_1.Server) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [])
                 ], DataService);
                 return DataService;
-                var _a;
             })();
             exports_1("DataService", DataService);
         }
